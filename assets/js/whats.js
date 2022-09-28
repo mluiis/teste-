@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $('#telefone').mask('(00) 00000-0000');
+    $('#tel').mask('(00) 00000-0000');
 })
 
 function tel(tel) {
@@ -49,7 +49,7 @@ $form.addEventListener('submit', (event) => {
     
     setTimeout(() => {
         let nome = document.querySelector('#nome').value
-        let tel = document.querySelector('#telefone').value
+        let tel = document.querySelector('#tel').value
         let endereco = document.querySelector('#endereco').value
         let data = document.querySelector('#data').value
         let horario = document.querySelector('#horario').value

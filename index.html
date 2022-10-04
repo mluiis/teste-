@@ -1,112 +1,119 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Faça seu Pedido -  Viva Doces</title>
-	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	  <link rel="stylesheet" type="text/css" href="assets/css/pedido.css">
-</head>
-<body>
+<html lang="pt-br">
 
-  <div class="container-fluid">
-			<header class="cabe">
-				<h1>Faça seu orçamento :)</h1>
-			</header>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Faça seu Pedido - Viva Doces</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/pedido.css">
+    <!-- SCRIPTS -->
+    <script src="https://code.jquery.com/jquery-3.2.0.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js"></script>
+  </head>
+ 
+  <body>
 
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f2d9f2; border-radius: 5px;">
-  <a class="navbar-brand" href="#">LOGO</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">HOME</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">CURSOS</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">FAÇA SEU PEDIDO</a><span class="sr-only">(Página atual)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a href="#" class="nav-link dropdown-toggle"  data-toggle="dropdown">
-          REDES SOCIAIS
-        </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Instagram</a>
-          <a class="dropdown-item" href="#">Whatsapp</a>
-          <a class="dropdown-item" href="#">Youtube</a>
+    <div class="container-fluid">
+      <header class="cabe">
+        <h1>Faça seu orçamento :)</h1>
+      </header>
+
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f2d9f2; border-radius: 5px;">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CURSOS</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="#">FAÇA SEU PEDIDO</a><span class="sr-only">(Página atual)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                REDES SOCIAIS
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Instagram</a>
+                <a class="dropdown-item" href="#">Whatsapp</a>
+                <a class="dropdown-item" href="#">Youtube</a>
+              </div>
+            </li>
+          </ul>
         </div>
-      </li>
-    </ul>
-  </div>
-</nav>
-<br>
+      </nav>
+      <br>
 
-<form class="formulario">
-	
-	  <div class="form-group">
-    <label for="nome">Nome:</label>
-    <input type="text" class="form-control" id="nome" required>
-  </div>
+      <form class="formulario" id="form">
 
-  <div class="form-group">
-    <label for="telefone">Telefone:</label>
-    <input type="tel" class="form-control" id="tel" required>
-  </div>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" name="Nome" required>
+        </div>
 
-<div class="form-group">
-    <label for="endereço">Endereço:</label>
-    <input type="text" class="form-control" id="endereco" required>
-  </div>
+        <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input type="tel" class="form-control" id="tel" name="Telefone" onkeyup="handlePhone(event)" />
+        </div>
 
-  <div class="form-group">
-    <label for="data">Data do Evento:</label>
-    <input type="date" class="form-control" id="data" required>
-  </div>
+        <div class="form-group">
+          <label for="endereço">Endereço:</label>
+          <input type="text" class="form-control" id="endereco" name="Endereço" required>
+        </div>
+
+        <div class="form-group">
+          <label for="data">Data do Evento:</label>
+          <input type="date" class="form-control" id="data" name="Data" required>
+        </div>
 
 
-  <div class="form-group">
-    <label for="horario">Horário do Evento:</label>
-    <input type="time" class="form-control" id="horario" required>
-  </div>
+        <div class="form-group">
+          <label for="horario">Horário do Evento:</label>
+          <input type="time" class="form-control" id="horario" name="Horário" required>
+        </div>
 
-<div>
-	<p>Tamanho do Bolo:</p>
-<select class="form-control">
-  <option> Selecione o tamanho:</option>
-  <option> 1 (um) Andar - 15cm - 12 Fatias</option>
-  <option> 1 (um) Andar - 20cm - 25 Fatias</option>
-  <option> 1 (um) Andar - 25cm - 40 Fatias</option>
-  <option> 1 (um) Andar - 30cm - 55 Fatias</option>
-  <option> 2 (dois) Andares - 20cm + 15cm - 40 Fatias</option>
-  <option> 2 (dois) Andares - 25cm + 15cm - 55 Fatias</option>
-  <option> 2 (dois) Andares - 30cm + 20cm - 90 Fatias</option>
-  <option> 3 (três) Andares - 25cm + 20cm + 15cm - 80 Fatias</option>
-  <option> 3 (três) Andares - 30cm + 20cm + 15cm - 105 Fatias</option>
-  <option> 3 (três) Andares - 30cm + 25cm + 15cm - 150 Fatias</option>
-  <option> 3 (três) Andares - 30cm + 25cm + 20cm - 180 Fatias</option>
-  <option> 4 (quatro) Andares - 30cm + 25cm + 20cm + 15cm - 200 Fatias</option>
-</select><br>
-</div>
+        <div>
+          <p>Tamanho do Bolo:</p>
+          <select class="form-control" id="opt1ons">
+            <option> Selecione o tamanho:</option>
+            <option value="1 (um) Andar - 15cm - 12 Fatias"> 1 (um) Andar - 15cm - 12 Fatias</option>
+            <option value="1 (um) Andar - 20cm - 25 Fatias"> 1 (um) Andar - 20cm - 25 Fatias</option>
+            <option value="1 (um) Andar - 25cm - 40 Fatias"> 1 (um) Andar - 25cm - 40 Fatias</option>
+            <option value="1 (um) Andar - 30cm - 55 Fatias"> 1 (um) Andar - 30cm - 55 Fatias</option>
+            <option value="2 (dois) Andares - 20cm + 15cm - 40 Fatias"> 2 (dois) Andares - 20cm + 15cm - 40 Fatias</option>
+            <option value="2 (dois) Andares - 25cm + 15cm - 55 Fatias"> 2 (dois) Andares - 25cm + 15cm - 55 Fatias</option>
+            <option value="2 (dois) Andares - 30cm + 20cm - 90 Fatias"> 2 (dois) Andares - 30cm + 20cm - 90 Fatias</option>
+            <option value="3 (três) Andares - 25cm + 20cm + 15cm - 80 Fatias"> 3 (três) Andares - 25cm + 20cm + 15cm - 80 Fatias</option>
+            <option value="3 (três) Andares - 30cm + 20cm + 15cm - 105 Fatias"> 3 (três) Andares - 30cm + 20cm + 15cm - 105 Fatias</option>
+            <option value="3 (três) Andares - 30cm + 25cm + 15cm - 150 Fatias"> 3 (três) Andares - 30cm + 25cm + 15cm - 150 Fatias</option>
+            <option value="3 (três) Andares - 30cm + 25cm + 20cm - 180 Fatias"> 3 (três) Andares - 30cm + 25cm + 20cm - 180 Fatias</option>
+            <option value="4 (quatro) Andares - 30cm + 25cm + 20cm + 15cm - 200 Fatias"> 4 (quatro) Andares - 30cm + 25cm + 20cm + 15cm - 200 Fatias</option>
+          </select><br>
+        </div>
 
-<div class="form-group">
-    <label for="texto">Como você quer o bolo?</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div><br>
+        <div class="form-group">
+          <label for="texto">Como você quer o bolo?</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div><br>
 
-<div class="botao"> 
-<button type="submit" class=" btn btn-primary">Enviar</button>
-</div>
+        <div class="botao">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </div>
 
-</form>
+      </form>
 
-</div>
-
-</body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <!-- SCRIPTS -->
+    <script type="text/javascript" src="assets/js/whats.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
